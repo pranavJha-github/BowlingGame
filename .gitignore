@@ -1,3 +1,62 @@
+# gitignore for CMake Cpp VS2022 project
+
+# --- Build folders ---
+build/
+out/
+[Cc]MakeCache.txt
+[Cc]MakeFiles/
+cmake_install.cmake
+Makefile
+CMakeScripts/
+
+# --- Visual Studio generated ---
+.vs/
+*.VC.db
+*.VC.opendb
+*.VC.db-wal
+*.VC.db-shm
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# --- CMake API replies ---
+**/CMakeFiles/
+**/CMakeFiles/**/*
+**/cmake.check_cache
+**/CMakeCache.txt
+**/cmake_install.cmake
+**/Makefile
+
+# --- Build Artifacts ---
+*.app
+*.pdb
+*.idb
+*.class
+
+# --- Lock/Database files ---
+*.lock
+*.sqlite
+
+# --- Backup/Temporary Files ---
+*~
+*.tmp
+*.bak
+*.swp
+*.swn
+*.swo
+
+# --- JSON and reply data (CMake, Visual Studio, etc) ---
+**/reply/
+**/query/
+*.json
+
+# --- Custom ---
+*.log
+*.cache
+*.dbg
+
+
 # Prerequisites
 *.d
 
