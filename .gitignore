@@ -49,7 +49,19 @@ CMakeScripts/
 # --- JSON and reply data (CMake, Visual Studio, etc) ---
 **/reply/
 **/query/
-*.json
+# *.json <- Don't ignore all JSON files globally
+
+# Only ignore auto-generated JSON, not project configs
+# CMake API replies typically live inside `out/build/**`
+out/build/**/reply/
+out/build/**/query/
+out/build/**/*.json
+
+# Allow VS Code config for ease of project setup
+!CMakePresets.json
+!.vscode/
+!.vscode/launch.json
+!.vscode/settings.json
 
 # --- Custom ---
 *.log
