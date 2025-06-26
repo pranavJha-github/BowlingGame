@@ -1,7 +1,8 @@
 ﻿# CMakeList.txt : CMake project for BowlingGame, include source and define
 # project specific logic here.
 #
-cmake_minimum_required (VERSION 3.8)
+cmake_minimum_required (VERSION 3.13)
+project ("BowlingGame")
 
 # Enable Hot Reload for MSVC compilers if supported.
 if (POLICY CMP0141)
@@ -9,13 +10,18 @@ if (POLICY CMP0141)
   set(CMAKE_MSVC_DEBUG_INFORMATION_FORMAT "$<IF:$<AND:$<C_COMPILER_ID:MSVC>,$<CXX_COMPILER_ID:MSVC>>,$<$<CONFIG:Debug,RelWithDebInfo>:EditAndContinue>,$<$<CONFIG:Debug,RelWithDebInfo>:ProgramDatabase>>")
 endif()
 
-project ("BowlingGame")
+
 
 # Add source to this project's executable.
-add_executable (BowlingGame "BowlingGame.cpp" "BowlingGame.h")
+add_executable (BowlingGame "src/BowlingCore/BowlingGame.cpp" "include/BowlingCore/BowlingGame.h")
 
-if (CMAKE_VERSION VERSION_GREATER 3.12)
-  set_property(TARGET BowlingGame PROPERTY CXX_STANDARD 20)
-endif()
+target_include_directories(BowlingGame PRIVATE 
+    ${PROJECT_SOURCE_DIR}/include
+)
 
-# TODO: Add tests and install targets if needed.
+# Setting the required C++ standard explicitly
+set_target_properties(BowlingGame PROPERTIES
+    CXX_STANDARD 20
+    CXX_STANDARD_REQUIRED YES
+    CXX_EXTENSIONS NO
+)
