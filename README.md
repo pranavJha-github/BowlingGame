@@ -34,7 +34,7 @@ This section explores the rationale behind the overall architecture of the Bowli
  
 ### Namespaces
  
- namespace Game {
+ 	namespace Game {
 	    namespace Controllers {
 	        class IGameController;
 	        class BowlingGameController;
